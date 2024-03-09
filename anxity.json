@@ -1,0 +1,30 @@
+[
+    {
+      "question": "Most of the time do you find yourself taking actions for the plans you have set for your daily life?",
+      "answer": "Yes"
+    },
+    {
+      "question": "Do you often find yourself having negative thoughts, repetitively?",
+      "answer": "Sometimes"
+    },
+    {
+      "question": "Do you feel bothered by this?",
+      "answer": "Slightly"
+    },
+    {
+      "question": "How do you feel when you achieve your goals?",
+      "answer": "Motivated"
+    },
+    {
+      "question": "Most of the time, do you feel overwhelmed in daily life?",
+      "answer": "Sometimes"
+    },
+    {
+      "question": "On average, do you wake up feeling rested in the morning?",
+      "answer": "No"
+    },
+    {
+      "question": "Most of the time, do you find yourself being present in the moment?",
+      "answer": "Most of the time"
+    }
+  ]

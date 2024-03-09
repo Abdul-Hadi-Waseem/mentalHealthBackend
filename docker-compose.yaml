@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+  mental-support-service:
+    build:
+      context: .
+    container_name: mental-health-backend-container
+    ports:
+      - "3000:3000"
+    networks:
+      - mental_support_netspace
+    environment:
+      - HOST=139.99.28.47
+      - DB_PORT=5432
+      - USERNAME=postgres
+      - PASSWORD=Mental@9252411
+      - DATABASE=mental_health_db
+      - LOGGING=true
+      - PORT=3000
+      - JWT_SECRECT=abracadabra
+      - MAIL_HOST=mail.smtp2go.com
+      - MAIL_PORT=2525
+      - MAIL_USER=mental
+      - MAIL_PASS=Mental@1431
+      - MAIL_FROM=noreply@imran.com
+    depends_on:
+      - postgres_service
+
+
+  postgres_service:
+    image: postgres:latest
+    container_name: postgres-container
+    ports:
+      - "5432:5432"
+    networks:
+      - mental_support_netspace
+    environment:
+      POSTGRES_PASSWORD: Mental@9252411
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
+
+networks:
+  mental_support_netspace:
+
+volumes:
+  postgres_volume:

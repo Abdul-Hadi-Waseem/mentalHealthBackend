@@ -1,0 +1,102 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type SuccessResponse implements GenericGraphQlResponse {
+  success: Boolean!
+  error: String!
+  message: String!
+  data: String!
+}
+
+interface GenericGraphQlResponse {
+  success: Boolean!
+  error: String!
+  message: String!
+}
+
+type SuccessJSONResponse implements GenericGraphQlResponse {
+  success: Boolean!
+  error: String!
+  message: String!
+  data: JSON!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type Doctor {
+  id: Int!
+  college: String!
+  course: String!
+}
+
+type ActionsUsersModel implements GenericGraphQlResponse {
+  success: Boolean!
+  error: String!
+  message: String!
+  data: String!
+}
+
+type ActionsUsersLoginModel implements GenericGraphQlResponse {
+  success: Boolean!
+  error: String!
+  message: String!
+  data: JSON!
+}
+
+type Query {
+  main: SuccessResponse!
+  doctors: [Doctor!]!
+  login(rawData: LoginDto!): ActionsUsersLoginModel!
+  dictionary: SuccessJSONResponse!
+}
+
+input LoginDto {
+  email: String!
+  password: String!
+  level: Int!
+}
+
+type Mutation {
+  programform(argsData: ProgramDataArgs!): SuccessJSONResponse!
+  addDoctorProfile(addDoctorArgs: AddDoctorArgs!): String!
+  actionsUsersRegistration(rawData: CreateUserDto!): ActionsUsersModel!
+  instituteRegistration(rawData: CreateUserDto!): ActionsUsersModel!
+  contactUs(rawData: ContactUsArgs!): String!
+}
+
+input ProgramDataArgs {
+  formId: Float!
+  metadata: JSON!
+}
+
+input AddDoctorArgs {
+  college: String!
+  course: String!
+}
+
+input CreateUserDto {
+  name: String!
+  dob: String
+  email: String!
+  password: String!
+  gender: Int
+  level: Int
+  phone: String!
+  address: String
+  country: String
+  city: String
+  state: String
+  zip_code: String
+  institute_name: String
+}
+
+input ContactUsArgs {
+  name: String!
+  email: String!
+  phone: String!
+  message: String!
+}
